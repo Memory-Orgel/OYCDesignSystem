@@ -12,6 +12,7 @@ const preview: Preview = {
       },
     },
   },
+
   decorators: [
     withThemeFromJSXProvider({
       themes: {
@@ -21,6 +22,8 @@ const preview: Preview = {
       Provider: ThemeProvider,
     }),
   ],
+
+  tags: ['autodocs']
 };
 
 export default preview;
