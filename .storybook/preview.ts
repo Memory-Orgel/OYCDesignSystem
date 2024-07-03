@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import { ThemeProvider } from '@emotion/react';
-import Theme from '../src/themes/theme';
+import Theme from '../src/themes/lightTheme';
 
 const preview: Preview = {
   parameters: {
@@ -23,7 +23,7 @@ const preview: Preview = {
     }),
   ],
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;
