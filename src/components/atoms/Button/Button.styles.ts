@@ -10,17 +10,45 @@ export const base = (theme: Theme, size: Size) => css`
   border-radius: ${theme.borderRadius.sm};
   font-size: ${theme.typography.fontSize[size]};
   font-weight: ${theme.typography.fontWeight.medium};
-  cursor: pointer;
+  transition: all 100ms ease;
+  user-select: none;
+
+  :enabled {
+    cursor: pointer;
+  }
+
+  :disabled {
+    cursor: default;
+  }
 `;
 
 export const variants: Record<ButtonVariant, (theme: Theme, palette: PaletteColor) => SerializedStyles> = {
   contained: (theme: Theme, palette: PaletteColor) => css`
     background-color: ${palette.main};
     color: ${palette.contrastText};
+
+    :enabled {
+      :hover {
+        background-color: ${palette.hover};
+      }
+
+      :active {
+        background-color: ${palette.active};
+      }
+    }
+
+    :disabled {
+      background-color: ${palette.disabled};
+    }
   `,
   outlined: (theme: Theme, palette: PaletteColor) => css`
     border: 1px solid ${palette.main};
     background-color: ${theme.colors.background};
     color: ${palette.main};
+
+    :disabled {
+      border: 1px solid ${palette.disabled};
+      color: ${palette.disabled};
+    }
   `,
 };

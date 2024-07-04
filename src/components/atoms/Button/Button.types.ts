@@ -9,4 +9,5 @@ export interface ButtonProps extends React.ComponentProps<'button'> {
   size?: Size;
   variant?: ButtonVariant;
   color?: Palette;
+  disabled?: boolean;
 }
