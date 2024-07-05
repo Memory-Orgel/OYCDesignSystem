@@ -10,12 +10,17 @@ export const Button = ({
   color = 'primary',
   variant = 'contained',
   disabled = false,
+  fullWidth = false,
   ...props
 }: ButtonProps) => {
   const theme = useTheme();
 
   return (
-    <button css={[base(theme, size), variants[variant](theme, theme.colors[color])]} disabled={disabled} {...props}>
+    <button
+      css={[base(theme, size, fullWidth), variants[variant](theme, theme.colors[color])]}
+      disabled={disabled}
+      {...props}
+    >
       {children}
     </button>
   );

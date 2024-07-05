@@ -10,4 +10,5 @@ export interface ButtonProps extends React.ComponentProps<'button'> {
   variant?: ButtonVariant;
   color?: Palette;
   disabled?: boolean;
+  fullWidth?: boolean;
 }

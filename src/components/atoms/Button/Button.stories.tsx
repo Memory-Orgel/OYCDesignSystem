@@ -32,6 +32,9 @@ const meta = {
     disabled: {
       description: '버튼의 비활성화 여부입니다.',
     },
+    fullWidth: {
+      description: '`width`를 상위 노드의 크기에 맞출지 여부입니다.',
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -46,6 +49,7 @@ export const Primary: Story = {
     variant: 'contained',
     color: 'primary',
     disabled: false,
+    fullWidth: false,
   },
 };
 

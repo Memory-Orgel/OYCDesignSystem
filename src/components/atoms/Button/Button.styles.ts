@@ -3,7 +3,7 @@ import { PaletteColor } from '../../../themes/lightTheme';
 import { Size } from '../../../themes/themeBase';
 import { ButtonVariant } from './Button.types';
 
-export const base = (theme: Theme, size: Size) => css`
+export const base = (theme: Theme, size: Size, fullWidth: boolean) => css`
   padding: calc(${theme.spacing[size]} / 1.375) ${theme.spacing[size]};
   box-sizing: border-box;
   border: 0;
@@ -20,6 +20,11 @@ export const base = (theme: Theme, size: Size) => css`
   :disabled {
     cursor: default;
   }
+
+  ${fullWidth &&
+  css`
+    width: 100%;
+  `}
 `;
 
 export const variants: Record<ButtonVariant, (theme: Theme, palette: PaletteColor) => SerializedStyles> = {
