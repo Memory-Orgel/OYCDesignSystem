@@ -10,7 +10,7 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div style={{ margin: '2rem' }}>
+      <div style={{ padding: '1rem' }}>
         <Story />
       </div>
     ),
@@ -18,19 +18,19 @@ const meta = {
   tags: ['!autodocs'],
   argTypes: {
     children: {
-      description: '내용',
+      description: '버튼 안에 표시할 텍스트입니다.',
     },
     size: {
-      description: '크기',
+      description: '버튼의 크기입니다.',
     },
     variant: {
-      description: '버튼 스타일',
+      description: '버튼의 스타일입니다.',
     },
     color: {
-      description: '적용할 컬러 팔레트',
+      description: '적용할 컬러 팔레트입니다.',
     },
     disabled: {
-      description: '버튼 비활성화 여부',
+      description: '버튼의 비활성화 여부입니다.',
     },
   },
 } satisfies Meta<typeof Button>;
@@ -39,9 +39,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-const colorList: Palette[] = ['primary', 'secondary'];
-
-export const Contained: Story = {
+export const Primary: Story = {
   args: {
     children: 'Button',
     size: 'md',
@@ -49,10 +47,21 @@ export const Contained: Story = {
     color: 'primary',
     disabled: false,
   },
+};
+
+const colorList: Palette[] = ['primary', 'secondary'];
+
+export const Contained: Story = {
+  args: {
+    ...Primary.args,
+    variant: 'contained',
+  },
   render: (args) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
       {colorList.map((color) => (
-        <Button {...args} color={color} variant="contained" />
+        <Button {...args} color={color}>
+          {color}
+        </Button>
       ))}
     </div>
   ),
@@ -60,26 +69,19 @@ export const Contained: Story = {
 
 export const Outlined: Story = {
   args: {
-    ...Contained.args,
+    ...Primary.args,
+    variant: 'outlined',
+  },
+  parameters: {
+    controls: false,
   },
   render: (args) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
       {colorList.map((color) => (
-        <Button {...args} color={color} variant="outlined" />
+        <Button {...args} color={color}>
+          {color}
+        </Button>
       ))}
     </div>
   ),
-};
-
-export const Primary: Story = {
-  args: {
-    ...Contained.args,
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    ...Primary.args,
-    color: 'secondary',
-  },
 };

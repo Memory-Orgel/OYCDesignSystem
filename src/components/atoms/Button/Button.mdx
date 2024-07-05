@@ -1,8 +1,22 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Primary, Controls } from '@storybook/addon-docs/blocks';
 import * as Button from './Button.stories.tsx';
 
-<Meta title="DDS/Button" />
+<Meta of={Button} />
 
 # Button
 
-<Story of={Button.Primary} />
+일반적인 버튼입니다.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Contained
+
+<Story of={Button.Contained} />
+
+## Outlined
+
+<Story of={Button.Outlined} />
