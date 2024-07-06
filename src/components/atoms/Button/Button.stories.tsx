@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Palette } from '../../../themes/lightTheme';
 
 const meta = {
-  title: 'DDS/Button',
+  title: 'UI/Atoms/Button',
   component: Button,
   parameters: {
     layout: 'fullscreen',
@@ -53,7 +53,7 @@ export const Primary: Story = {
   },
 };
 
-const colorList: Palette[] = ['primary', 'secondary'];
+const colorList: Palette[] = ['primary', 'secondary', 'danger'];
 
 export const Contained: Story = {
   args: {

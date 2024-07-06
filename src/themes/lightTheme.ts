@@ -18,6 +18,13 @@ const LightTheme: ThemeType = {
       active: colorPalette.blueGrey['800'],
       disabled: colorPalette.blueGrey.A200,
     },
+    danger: {
+      main: colorPalette.red['500'],
+      contrastText: '#fff',
+      hover: colorPalette.red.A200,
+      active: colorPalette.red['800'],
+      disabled: colorPalette.red['200'],
+    },
     background: '#fff',
     text: '#000',
   },
@@ -25,8 +32,10 @@ const LightTheme: ThemeType = {
 
 export default LightTheme;
 
-export type Palette = 'primary' | 'secondary';
-export type PaletteColor = { [key in 'main' | 'contrastText' | 'hover' | 'active' | 'disabled']: string };
+export type Palette = 'primary' | 'secondary' | 'danger';
+export type PaletteColor = {
+  [key in 'main' | 'contrastText' | 'hover' | 'active' | 'disabled']: string;
+};
 export interface ThemeType extends ThemeBaseType {
   colors: {
     background: string;
