@@ -17,7 +17,10 @@ export const Button = ({
 
   return (
     <button
-      css={[base(theme, size, fullWidth), variants[variant](theme, theme.colors[color])]}
+      css={[
+        base(theme, size, fullWidth),
+        variants[variant](theme, theme.colors[color]),
+      ]}
       disabled={disabled}
       {...props}
     >
