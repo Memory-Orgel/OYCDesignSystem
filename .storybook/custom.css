@@ -1,8 +1,21 @@
 @font-face {
-  font-family: 'Pretendard';
-  src: url('/src/assets/fonts/PretendardVariable.woff2');
+  font-family: 'GmarketSans';
+  font-weight: 300;
+  src: url('/src/assets/fonts/GmarketSansTTFLight.ttf');
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  src: url('/src/assets/fonts/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 700;
+  src: url('/src/assets/fonts/GmarketSansTTFBold.ttf');
 }
 
 * {
-  font-family: 'Pretendard';
+  font-family: 'GmarketSans';
 }
