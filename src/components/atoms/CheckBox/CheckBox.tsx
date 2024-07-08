@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTheme } from '@emotion/react';
 import { CheckBoxProps } from './CheckBox.types';
-import { base } from './CheckBox.styles';
+import { base, svgCss, polylineCss } from './CheckBox.styles';
 
 export const CheckBox = ({
   color = 'primary',
@@ -14,14 +14,15 @@ export const CheckBox = ({
   const theme = useTheme();
 
   return (
-    <>
+    <label>
       <input
         type="checkbox"
-        id="myCheckbox"
         css={base(theme, size)}
         {...props}
       />
-      {/* <label htmlFor="myCheckbox">체크박스</label> */}
-    </>
+      <svg css={svgCss(theme, size)} width="64" height="64">
+        <polyline css={polylineCss} points="53 16 24 45 11 32"></polyline>
+      </svg>
+    </label>
   );
 };
