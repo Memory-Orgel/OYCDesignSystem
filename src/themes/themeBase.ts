@@ -1,11 +1,12 @@
 import colorPalette from './colorPalette';
 
 export type Size = 'sm' | 'md' | 'lg' | 'xl';
-export type Weight = 'light' | 'regular' | 'medium' | 'semiBold' | 'bold' | 'extraBold';
+export type Weight = 'light' | 'medium' | 'bold';
 
 export type ThemeBaseType = {
   palette: Object;
   spacing: Record<Size, string>;
+  border: Record<Size, string>;
   borderRadius: Record<Size, string>;
   typography: {
     fontSize: Record<Size, string>;
@@ -20,6 +21,12 @@ const ThemeBase: ThemeBaseType = {
     md: '0.875rem',
     lg: '1rem',
     xl: '1.25rem',
+  },
+  border: {
+    sm: '0.0875rem',
+    md: '0.1rem',
+    lg: '0.125rem',
+    xl: '0.1875rem',
   },
   borderRadius: {
     sm: '0.25rem',
@@ -36,11 +43,8 @@ const ThemeBase: ThemeBaseType = {
     },
     fontWeight: {
       light: 300,
-      regular: 400,
       medium: 500,
-      semiBold: 600,
       bold: 700,
-      extraBold: 800,
     },
   },
 };
