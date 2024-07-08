@@ -5,11 +5,11 @@ const LightTheme: ThemeType = {
   ...ThemeBase,
   colors: {
     primary: {
-      main: colorPalette.blue.A400,
+      main: colorPalette.purple.A700,
       contrastText: '#fff',
-      hover: colorPalette.blue.A200,
-      active: colorPalette.blue.A700,
-      disabled: colorPalette.blue.A100,
+      hover: colorPalette.purple.A400,
+      active: colorPalette.purple['400'],
+      disabled: colorPalette.purple['100'],
     },
     secondary: {
       main: colorPalette.blueGrey.A700,
@@ -17,6 +17,13 @@ const LightTheme: ThemeType = {
       hover: colorPalette.blueGrey['500'],
       active: colorPalette.blueGrey['800'],
       disabled: colorPalette.blueGrey.A200,
+    },
+    success: {
+      main: colorPalette.blue['500'],
+      contrastText: '#fff',
+      hover: colorPalette.blue.A200,
+      active: colorPalette.blue['800'],
+      disabled: colorPalette.blue['200'],
     },
     danger: {
       main: colorPalette.red['500'],
@@ -32,7 +39,7 @@ const LightTheme: ThemeType = {
 
 export default LightTheme;
 
-export type Palette = 'primary' | 'secondary' | 'danger';
+export type Palette = 'primary' | 'secondary' | 'success' | 'danger';
 export type PaletteColor = {
   [key in 'main' | 'contrastText' | 'hover' | 'active' | 'disabled']: string;
 };

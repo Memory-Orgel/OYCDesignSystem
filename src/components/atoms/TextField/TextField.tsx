@@ -9,6 +9,7 @@ export const TextField = ({
   variant = 'outlined',
   placeholder = '',
   size = 'md',
+  error = false,
   ...props
 }: TextFieldProps) => {
   const theme = useTheme();
@@ -16,7 +17,7 @@ export const TextField = ({
   return (
     <input
       type="text"
-      css={base(theme, size)}
+      css={base(theme, size, error)}
       placeholder={placeholder}
       {...props}
     />
