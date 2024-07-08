@@ -20,6 +20,9 @@ const meta = {
     color: {
       description: '적용할 컬러 팔레트입니다.',
     },
+    value: {
+      description: '토글이 on이면 true, off면 false',
+    },
   },
 } satisfies Meta<typeof Toggle>;
 
