@@ -53,7 +53,7 @@ export const Primary: Story = {
   },
 };
 
-const colorList: Palette[] = ['primary', 'secondary', 'danger'];
+const colorList: Palette[] = ['primary', 'secondary', 'success', 'danger'];
 
 export const Contained: Story = {
   args: {

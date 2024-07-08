@@ -9,4 +9,5 @@ export interface TextFieldProps
   color?: Palette;
   size?: Size;
   placeholder?: string;
+  error?: boolean;
 }
