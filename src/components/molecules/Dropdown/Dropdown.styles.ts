@@ -14,6 +14,7 @@ export const base = (theme: Theme, size: Size) => css`
   display: flex;
   align-items: center;
   position: relative;
+  min-width: 5rem;
   height: ${sizes[size].height};
   padding: 0 0.875rem;
   box-sizing: border-box;
@@ -106,6 +107,7 @@ export const itemContainer = (theme: Theme, open: boolean) => css`
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0.5rem 0.0125rem;
   border: 0.0625rem solid ${theme.colors.text.disabled};
   border-radius: 0.25rem;
+  background-color: ${theme.colors.background};
 
   ${open
     ? css`
@@ -114,6 +116,7 @@ export const itemContainer = (theme: Theme, open: boolean) => css`
     : css`
         transform: translateY(-0.25rem);
         opacity: 0;
+        pointer-events: none;
       `}
   transition: all 100ms ease;
 `;

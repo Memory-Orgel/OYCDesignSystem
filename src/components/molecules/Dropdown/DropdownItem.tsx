@@ -8,10 +8,13 @@ interface DropdownItmeProps extends React.ComponentProps<'div'> {
 }
 
 const containerCss = (theme: Theme) => css`
+  overflow: hidden;
   padding: 0.875rem 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: ${theme.colors.text.secondary};
-  transition: all 100ms ease;
   cursor: pointer;
+  transition: all 100ms ease;
 
   :hover {
     color: ${theme.colors.text.primary};

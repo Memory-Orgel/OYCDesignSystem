@@ -1,12 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import React, {
-  createContext,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
-import { useTheme } from '@emotion/react';
+import React, { createContext, ReactNode, useCallback, useState } from 'react';
+import { css, useTheme } from '@emotion/react';
 import { DropdownProps } from './Dropdown.types';
 import { base, variants, icon, itemContainer } from './Dropdown.styles';
 import { DropdownItem } from './DropdownItem';
@@ -55,7 +49,13 @@ export const Dropdown = ({
       {...props}
     >
       <input type="hidden" name={name} value={selected.value} />
-      <div>{selected.name}</div>
+      <div
+        css={css`
+          margin-right: 1.25rem;
+        `}
+      >
+        {selected.name}
+      </div>
       <span css={icon(open)}>
         <Arrow />
       </span>
