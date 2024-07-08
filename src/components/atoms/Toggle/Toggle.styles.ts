@@ -13,7 +13,7 @@ export const base = (theme: Theme, palette: PaletteColor) => css`
 
 export const thumb = (value: boolean) => css`
   position: absolute;
-  left: ${value ? '0.125rem' : '1rem'};
+  left: ${value ? '1rem' : '0.125rem'};
   width: 1rem;
   height: 1rem;
   border-radius: 0.5rem;
