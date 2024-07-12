@@ -32,13 +32,22 @@ const LightTheme: ThemeType = {
       active: colorPalette.red['800'],
       disabled: colorPalette.red['200'],
     },
+    text: {
+      primary: '#000',
+      secondary: colorPalette.blueGrey['700'],
+      disabled: colorPalette.blueGrey.A100,
+    },
     background: '#fff',
-    text: '#000',
   },
 };
 
 export default LightTheme;
 
+export interface TextPalette {
+  primary: string;
+  secondary: string;
+  disabled: string;
+}
 export type Palette = 'primary' | 'secondary' | 'success' | 'danger';
 export type PaletteColor = {
   [key in 'main' | 'contrastText' | 'hover' | 'active' | 'disabled']: string;
@@ -46,7 +55,7 @@ export type PaletteColor = {
 export interface ThemeType extends ThemeBaseType {
   colors: {
     background: string;
-    text: string;
+    text: TextPalette;
   } & {
     [key in Palette]: PaletteColor;
   };
