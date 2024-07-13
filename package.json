@@ -1,19 +1,20 @@
 {
-  "name": "ocy-ds",
-  "main": "dist/components/index.ts",
+  "name": "oyc11",
+  "main": "dist/index.js",
   "private": false,
   "files": [
     "dist/assets/icons",
     "dist/components",
     "dist/themes",
     "dist/utils",
-    "README.md"
+    "README.md",
+    "index.*"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Memory-Orgel/OYCDesignSystem"
   },
-  "version": "0.0.2",
+  "version": "0.0.1",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@testing-library/jest-dom": "^5.17.0",
@@ -33,8 +34,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "rimraf dist",
-    "compile": "babel src --out-dir dist --copy-files --no-copy-ignored --extensions \".ts,.tsx\"",
-    "publish": "npm run clean && tsc && npm run compile && npm publish"
+    "compile": "npm run clean && tsc && babel src --out-dir dist --copy-files --no-copy-ignored --extensions \".ts,.tsx\""
   },
   "eslintConfig": {
     "extends": [
