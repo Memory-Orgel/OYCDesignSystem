@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { DropdownContext } from './Dropdown';
 import { css, Theme, useTheme } from '@emotion/react';
 
-interface DropdownItmeProps extends React.ComponentProps<'div'> {
+export interface DropdownItmeProps extends React.ComponentProps<'div'> {
   value: string;
 }
 
